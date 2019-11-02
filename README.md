@@ -1,4 +1,4 @@
-# K-Means Clustering
+# Image-segmentation using K-Means Clustering Algorithm
 Implementation of K-Means Algorithm on an Image.
 
 ## Dependencies
