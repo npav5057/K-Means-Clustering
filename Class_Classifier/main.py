@@ -19,20 +19,20 @@ if __name__ == '__main__':
     mean = fun.set_random_mean(data,k)
 
     itr = 0
-    final=999999.9
-    init=0.0
-    while(abs(final-init)>error):
+    final_distortion=999999.9
+    init_distortion=0.0
+    while(abs(final_distortion-init_distortion)>error):
         cluster = [[] for i in range(k)]
         itr=itr+1
-        init=final
-        final=0
+        init_distortion=final_distortion
+        final_distortion=0
         for point in data:
-            assigned_cluster,min_distortion = fun.get_Cluster(point,mean,k)
+            assigned_cluster , min_distortion = fun.get_Cluster(point,mean,k)
             cluster[assigned_cluster].append(point)
-            final=final+min_distortion
+            final_distortion = final_distortion + min_distortion
         for i in range(k):
             mean[i]=fun.mean(cluster[i])
-        print("Iteration:",itr,"     Distortion measure:",abs(final-init))
+        print("Iteration:",itr,"     Distortion measure Error:",abs(final_distortion-init_distortion))
 
 
     colour=fun.get_random_colour(k)
