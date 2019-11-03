@@ -1,5 +1,5 @@
 from random import choice
-from math import hypot,sqrt,pow
+from math import hypot
 
 
 def mean(Class):
